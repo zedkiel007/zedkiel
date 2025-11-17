@@ -7,9 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/main.js",
     "build": "tsc",
-    "start:dev": "nest start --watch",
+    "start:dev": "npx nest start --watch",
     "start:prod": "npm run build && npm run start",
     "lint": "eslint . --ext .ts",
+    "start:dev": "nest start --watch",
+    "prestart": "npm run build", 
+    "start": "node dist/main",    
+    "build": "nest build",        
     "format": "prettier --write \"src/**/*.ts\""
   },
   "keywords": [],
@@ -34,11 +38,13 @@
     "typeorm": "^0.3.27"
   },
   "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
     "@types/node": "^24.4.0",
     "@types/passport-jwt": "^4.0.1",
     "@types/pg": "^8.15.5",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "eslint": "^8.48.0"
   },
   "repository": {
     "type": "git",
